@@ -1,0 +1,1 @@
+{"education": {"university.degree": 7, "high.school": 5, "basic.9y": 4, "professional.course": 6, "basic.4y": 2, "basic.6y": 3, "unknown": 1, "illiterate": 0}, "default": {"no": 3, "unknown": 2, "yes": 1}, "housing": {"yes": 3, "no": 1, "unknown": 2}, "loan": {"yes": 3, "no": 1, "unknown": 2}, "poutcome": {"nonexistent": 2, "failure": 3, "success": 1}}

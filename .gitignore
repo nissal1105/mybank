@@ -1,5 +1,5 @@
 # files
-bank-additional-full.csv
+artifacts/bank-additional-full.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Marketing AI Model</title>
+    <style>
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+        h3 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+
+        
+    </style>
+</head>
+<body>
+    
+    <h1>Bank Classification Model </h1>
+
+    <form action ="/getdata" method="post">
+        <h1>Attributes</h1>
+        <h3>Bank client data:</h3>
+        <div style="text-align: center;">
+        <label for="age">Age of person:</label><input type="number" name="age" min="10" max="110"><br><br>
+        <label for="job">Type of job:</label>
+        <select name="htmljob" id="job">
+            <option value="admin.">admin.</option>
+            <option value="blue-collar">blue-collar</option>
+            <option value="technician">technician</option>
+            <option value="services">services</option>
+            <option value="management">management</option>
+            <option value="retired">retired</option>
+            <option value="entrepreneur">entrepreneur</option>
+            <option value="self-employed">self-employed</option>
+            <option value="housemaid">housemaid</option>
+            <option value="unemployed">unemployed</option>
+            <option value="student">student</option>
+            <option value="unknown">unknown</option>
+        </select><br><br>
+        
+        <label for="marital">Marital status:</label>
+        <select name="htmlmarital" id="marital">
+            <option value="married">married</option>
+            <option value="single">single</option>
+            <option value="divorced">divorced</option>
+            <option value="unknown">unknown</option>
+        </select><br><br>
+
+        <label for="education">Education:</label>
+        <select name="htmleducation" id="education">
+            <option value="7">University degree</option>
+            <option value="5">High school</option>
+            <option value="4">Basic 9 years</option>
+            <option value="6">Professional course</option>
+            <option value="2">Basic 4 years</option>
+            <option value="3">Basic 6 years</option>
+            <option value="1">Unknown</option>
+            <option value="0">Illiterate</option>
+        </select><br><br>
+
+
+        <label for="default">Has credit in default?</label>
+        <select name="htmldefault" id="default">
+            <option value="3">no</option>
+            <option value="2">unknown</option>
+            <option value="1">yes</option>
+        </select><br><br>
+
+        <label for="housing">Has housing loan?</label>
+        <select name="htmlhousing" id="housing">
+            <option value="1">no</option>
+            <option value="2">unknown</option>
+            <option value="3">yes</option>
+        </select><br><br>
+
+        <label for="loan">Has personal loan? </label>
+        <select name="htmlloan" id="loan">
+            <option value="1">no</option>
+            <option value="2">unknown</option>
+            <option value="3">yes</option>
+        </select><br><br>
+        <h3>Related with the last contact of the current campaign:</h3>
+        <label for="contact">contact communication type</label>
+        <select name="htmlcontact" id="contact">
+            <option value="cellular">cellular</option>
+            <option value="telephone">telephone</option>
+        </select><br><br>
+        
+        <label for="month">Last contact month of year:</label>
+        <select name="htmlmonth" id="month">
+            <option value="may">May</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="jun">June</option>
+            <option value="nov">November</option>
+            <option value="apr">April</option>
+            <option value="oct">October</option>
+            <option value="sep">September</option>
+            <option value="mar">March</option>
+            <option value="dec">December</option>
+        </select><br><br>
+
+
+        <label for="day_of_week">Last contact day of the week </label>
+        <select name="htmlday_of_week" id="day_of_week">
+            <option value="mon">Monday</option>
+            <option value="tue">Tuesday</option>
+            <option value="wed">Wednesday</option>
+            <option value="thu">Thursday</option>
+            <option value="fri">Friday</option>
+
+        </select><br><br>
+
+        <label for="duration">Duration:</label><input type="number" name="htmlduration">
+        <br><br>
+
+        <h3>Other attributes:</h3>
+        <label for="campaign">Campaign:</label><input type="number" name="htmlcampaign" min="1">
+        <br><br>
+
+        <label for="pdays">No of days that passed by after the client was last contacted from a previous campaign:<br>
+        Enter 999 means client was not previously contacted
+        </label><input type="number" name="htmlpdays" min="0">
+        <br><br>
+
+        <label for="previous">No of contacts performed before this campaign and for this client:
+        </label><input type="number" name="htmlprevious" min="0" max="20">
+        <br><br>
+
+        <label for="poutcome">Outcome of the previous marketing campaign :</label>
+        <select name="htmlpoutcome" id="poutcome">
+            <option value="2">nonexistent</option>
+            <option value="3">failure</option>
+            <option value="1">success</option>
+        </select><br><br>
+
+        <h3>Social and economic context attributes</h3>
+        <label for="emp_var_rate"><a href="https://tradingeconomics.com/portugal/employment-change">Employment variation rate - quarterly indicator</a></label>
+        <input type="number" id="emp_var_rate" name="htmlemp_var_rate" min="-Infinity" step="0.1"><br><br>
+
+        <label for="cons_price_idx"><a href="https://tradingeconomics.com/portugal/consumer-price-index-cpi">Consumer Price Index -Monthly indicator</a></label>
+        <input type="number" id="cons_price_idx" name="htmlcons_price_idx" step="any"><br><br>
+
+        <label for="cons_conf_idx"><a href="https://tradingeconomics.com/portugal/consumer-confidence">Consumer confidence index - Monthly indicator</a></label>
+        <input type="number" id="cons_conf_idx" name="htmlcons_conf_idx" min="-Infinity" step="any"><br><br>
+
+        <label for="euribor3m"><a href="https://tradingeconomics.com/euro-area/interbank-rate">Euribor 3 Months Rate</a></label>
+        <input type="number" id="euribor3m" name="htmleuribor3m" step="any"><br><br>
+
+        <label for="nr_employed"><a href="https://tradingeconomics.com/portugal/employment-rate">Portugal Employment Rate</a></label>
+        <input type="number" id="nr.employed" name="htmlnr_employed"><br><br>
+
+
+       
+        <input type="submit" value="Predict" style="font-size: larger;">
+
+        <h3>{{PREDICT_VALUE|center}}</h3>
+        </div>
+            
+    
+
+    </form>
+    
+</body>
+</html>
