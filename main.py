@@ -5,7 +5,7 @@ import numpy as np
 import CONFIG
 
 
-## creating flasm object
+## creating flask object
 app = Flask(__name__)
 
 @app.route('/')
